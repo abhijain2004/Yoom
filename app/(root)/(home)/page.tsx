@@ -10,7 +10,7 @@ const Home = () => {
     day: 'numeric' 
   };
   
-  let formattedDate = now.toLocaleDateString('en-US', options);
+  const formattedDate = now.toLocaleDateString('en-US', options);
   
   const options1: Intl.DateTimeFormatOptions = {
     hour: '2-digit',

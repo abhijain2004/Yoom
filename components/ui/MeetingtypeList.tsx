@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import MeetingModal from "./MeetingModal";
 import { useUser } from "@clerk/nextjs";
-import { Call, name, useStreamVideoClient } from "@stream-io/video-react-sdk";
+import { Call, useStreamVideoClient } from "@stream-io/video-react-sdk";
 import { useRouter } from "next/navigation";
 import { useToast } from "@/hooks/use-toast"
 import ReactDatePicker from 'react-datepicker';

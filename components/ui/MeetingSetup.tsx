@@ -4,7 +4,6 @@ import {
   DeviceSettings,
   VideoPreview,
   useCall,
-  useCallStateHooks,
 } from '@stream-io/video-react-sdk';
 
 
