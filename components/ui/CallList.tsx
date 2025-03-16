@@ -57,7 +57,7 @@ const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }) => {
       setRecordings(recordings);
     }catch(error){
       toast({
-        title: 'Failed to fetch recordings'
+        title: 'Failed to fetch recordings'+ ":"+error
       })
     } // here try and catch used so that if any error occurs due to multiple api calls it will not crash the app
     };

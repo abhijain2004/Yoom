@@ -13,7 +13,7 @@ const Meeting = ({ params }: { params: Promise<{ id: string }> }) => {
   //in the updated version on nextjs params return promise
   const resolvedParams = use(params); 
   const id = resolvedParams.id;
-  const {user,isLoaded}=useUser();
+  const {isLoaded}=useUser();
   const[isSetupComplete,setIsSetupComplete]=useState(false);
   const {call,isCallLoading}=useGetCallById(id);// return call object use for all functioning of call
 
