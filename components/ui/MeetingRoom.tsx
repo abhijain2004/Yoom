@@ -18,7 +18,7 @@ import { useRouter } from 'next/navigation';
   undefined =>!undefined => true =>!true => false */}
 
 
-type CallLayoutType = 'grid' | 'speaker-left' | 'speaker-right';
+type CallLayoutType = 'grid' | 'speaker-left' | 'speaker-right'|'speaker-bottom';
 const  MeetingRoom = () => {
   const router=useRouter();
   const searchParams=useSearchParams();
@@ -34,19 +34,26 @@ const  MeetingRoom = () => {
     switch (layout) {
       case 'grid':
         return <PaginatedGridLayout />;
-      case 'speaker-right':
+      case 'speaker-left':
         return <SpeakerLayout participantsBarPosition="left" />;
+      case 'speaker-right':
+        return <SpeakerLayout participantsBarPosition="right" />;
+      case 'speaker-bottom':
+        return <SpeakerLayout participantsBarPosition="bottom" />;
+      
       default:
         return <SpeakerLayout participantsBarPosition="right" />;
     }
   };
+  
 
   return (
     <section className="relative h-screen w-full overflow-hidden pt-4 text-white">
       <div className="relative flex size-full items-center justify-center">
-        <div className=" flex size-full max-w-[1000px] items-center">
+        
+          
           <CallLayout />
-        </div>
+        
         <div
           className={cn('h-[calc(100vh-86px)]  hidden ml-2', {
             'block': showParticipants,
@@ -65,7 +72,7 @@ const  MeetingRoom = () => {
             </DropdownMenuTrigger>
           </div>
           <DropdownMenuContent className="border-dark-1 bg-dark-1 text-white">
-            {['Grid', 'Speaker-Left', 'Speaker-Right'].map((item, index) => (
+            {['Grid', 'Speaker-Left', 'Speaker-Right', 'Speaker-Bottom'].map((item, index) => (
               <div key={index}>
                 <DropdownMenuItem
                 className='cursor-pointer'
